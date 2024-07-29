@@ -7,6 +7,7 @@ use md5::Md5;
 /// USAGE: summer [hash type] [filename] [expected hash]
 fn main() {
     let arg: Vec<String> = env::args().collect();
+    if arg[1].to_lowercase().as_str() == "help" { println!("USAGE: summer [algorithm] [file] [expected hash]"); exit(0) }
     let mut infile = fs::File::open(arg[2].as_str()).unwrap();
     let filehash: String;
 
